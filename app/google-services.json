@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "549815938807",
+    "firebase_url": "https://chatapp-miniopencode-iiita.firebaseio.com",
+    "project_id": "chatapp-miniopencode-iiita",
+    "storage_bucket": "chatapp-miniopencode-iiita.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:549815938807:android:cbbbb2ed2c983a9f0d2df2",
+        "android_client_info": {
+          "package_name": "com.example.chatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "549815938807-5dsu0qtqmp0upis2lht9r6inso06ebuj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABtcWzo0BTUrkK7Wv_u0hsvsUSErBL4CQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "549815938807-5dsu0qtqmp0upis2lht9r6inso06ebuj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
