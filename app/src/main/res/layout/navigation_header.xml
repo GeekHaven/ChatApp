@@ -1,24 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
-    android:padding="10dp"
+    android:layout_height="130dp"
+    android:padding="9dp"
     android:background="@color/design_default_color_secondary_variant"
     android:orientation="vertical"
     android:gravity="center"
     >
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        app:cardCornerRadius="@android:dimen/app_icon_size">
+
+        <ImageView
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:src="@drawable/big"
+            android:contentDescription="@string/todo123" />
+    </androidx.cardview.widget.CardView>
+
+
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="276dp"
+        android:layout_height="49dp"
         android:fontFamily="@font/coiny"
         android:gravity="center"
-        android:text="@string/chatapp"
+        android:text="@string/username"
         android:textColor="@android:color/background_light"
-        android:textSize="30sp" />
-
-
+        android:textSize="15sp" />
 
 
 </LinearLayout>
