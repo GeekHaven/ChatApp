@@ -5,9 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+
+import android.text.TextUtils;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -30,6 +34,11 @@ public class LoginActivity extends AppCompatActivity {
     private Button GoogleSignInBtn;
     private FirebaseAuth mAuth;
 
+
+    EditText email;
+    EditText password;
+    Button emailsignin;
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -45,16 +54,69 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
         mAuth=FirebaseAuth.getInstance();
+
         GoogleSignInBtn=findViewById(R.id.google_sign_in_btn);
+        email=findViewById(R.id.editTextTextPersonName);
+        password=findViewById(R.id.editTextTextPassword);
+        emailsignin=findViewById(R.id.button2);
         createRequest();
+
         GoogleSignInBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 signIn();
             }
         });
+
+
+
+
+
+
+
+        emailsignin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String userdata=email.getText().toString();
+                String userpass=password.getText().toString();
+                if (TextUtils.isEmpty(userdata) | TextUtils.isEmpty(userpass))
+                {
+                    Toast.makeText(LoginActivity.this, "Fill all feilds", Toast.LENGTH_LONG).show();
+                }
+                else {
+                    if( !Patterns.EMAIL_ADDRESS.matcher(userdata).matches()){
+                        email.setError("Enter Valid email");
+                        email.requestFocus();
+                        return;
+                    }
+                    else if (password.length()<6)
+                    {
+                        password.setError("Password Length should atleast be 6");
+                        password.requestFocus();
+                        return;
+                    }
+                    else {
+                        mAuth.signInWithEmailAndPassword(userdata, userpass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    FirebaseUser user = mAuth.getCurrentUser();
+                                    Toast.makeText(LoginActivity.this,"User Signed In",Toast.LENGTH_SHORT).show();
+                                }
+                                else {
+                                    Toast.makeText(LoginActivity.this, "Authentication failed.",
+                                            Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+                    }
+                }
+            }
+        });
     }
+
 
     private void createRequest() {
         // Configure Google Sign In
@@ -115,6 +177,7 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 });
     }
+
 
 
 }
