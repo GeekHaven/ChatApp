@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.Patterns;
@@ -33,10 +34,10 @@ public class LoginActivity extends AppCompatActivity {
     private Button GoogleSignInBtn;
     private FirebaseAuth mAuth;
 
+
     EditText email;
     EditText password;
     Button emailsignin;
-
 
     @Override
     protected void onStart() {
@@ -53,9 +54,15 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
         mAuth=FirebaseAuth.getInstance();
+
         GoogleSignInBtn=findViewById(R.id.google_sign_in_btn);
+        email=findViewById(R.id.editTextTextPersonName);
+        password=findViewById(R.id.editTextTextPassword);
+        emailsignin=findViewById(R.id.button2);
         createRequest();
+
         GoogleSignInBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -65,10 +72,9 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-        email=findViewById(R.id.editTextTextPersonName);
-        password=findViewById(R.id.editTextTextPassword);
-        emailsignin=findViewById(R.id.button2);
-        
+
+
+
 
         emailsignin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -110,6 +116,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+
 
     private void createRequest() {
         // Configure Google Sign In
@@ -170,6 +177,7 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 });
     }
+
 
 
 }
