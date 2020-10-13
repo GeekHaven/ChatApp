@@ -18,10 +18,10 @@
         app:cardCornerRadius="@android:dimen/app_icon_size">
 
         <ImageView
-            android:layout_height="match_parent"
             android:layout_width="match_parent"
-            android:src="@drawable/big"
-            android:contentDescription="@string/todo123" />
+            android:layout_height="match_parent"
+            android:contentDescription="@string/todo123"
+            android:src="@drawable/big" />
     </androidx.cardview.widget.CardView>
 
 
