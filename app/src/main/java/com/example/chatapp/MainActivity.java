@@ -70,10 +70,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Toast.makeText(this,R.string.settings,Toast.LENGTH_SHORT).show();
                 break;
             case R.id.logout_menu_item:
-                FirebaseAuth.getInstance().signOut();
-                Intent intent=new Intent(getApplicationContext(),LoginActivity.class);
-                startActivity(intent);
-                finish();
+                //temporary toast
+                Toast.makeText(this,R.string.logout,Toast.LENGTH_SHORT).show();
                 break;
         }
         mDrawerLayout.closeDrawer(GravityCompat.START);
