@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="130dp"
-    android:padding="9dp"
+    android:paddingTop="9dp"
     android:background="@color/design_default_color_secondary_variant"
     android:orientation="vertical"
     android:gravity="center"
@@ -18,10 +18,10 @@
         app:cardCornerRadius="@android:dimen/app_icon_size">
 
         <ImageView
-            android:layout_height="match_parent"
             android:layout_width="match_parent"
-            android:src="@drawable/big"
-            android:contentDescription="@string/todo123" />
+            android:layout_height="match_parent"
+            android:contentDescription="@string/todo123"
+            android:src="@drawable/big" />
     </androidx.cardview.widget.CardView>
 
 
