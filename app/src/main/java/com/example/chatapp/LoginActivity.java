@@ -147,6 +147,7 @@ public class LoginActivity extends AppCompatActivity {
                 assert account != null;
                 firebaseAuthWithGoogle(account.getIdToken());
             } catch (ApiException e) {
+                Log.d("google-auth-error",e.toString());
                 // Google Sign In failed, update UI appropriately
                 Toast.makeText(this,"SignIn Failed :)",Toast.LENGTH_SHORT).show();
                 // ...
