@@ -5,19 +5,24 @@
 
         <item
             android:id="@+id/my_profile_menu_item"
+            android:icon="@drawable/profile"
             android:title="@string/my_profile" />
 
         <item
             android:id="@+id/chat_list_menu_item"
+            android:icon="@drawable/chat"
             android:title="@string/chat_list" />
         <item
             android:id="@+id/find_friends_menu_item"
+            android:icon="@drawable/friend"
             android:title="@string/find_friends" />
         <item
             android:id="@+id/settings_menu_item"
+            android:icon="@drawable/settings"
             android:title="@string/settings" />
         <item
             android:id="@+id/logout_menu_item"
+            android:icon="@drawable/logout"
             android:title="@string/logout" />
     </group>
 </menu>
