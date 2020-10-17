@@ -4,11 +4,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="130dp"
-    android:padding="9dp"
+    android:padding="16dp"
     android:background="@color/design_default_color_secondary_variant"
     android:orientation="vertical"
     android:gravity="center"
+    android:layout_height="wrap_content"
     >
 
     <androidx.cardview.widget.CardView
@@ -27,8 +27,9 @@
 
 
     <TextView
-        android:layout_width="276dp"
-        android:layout_height="49dp"
+        android:margin_top="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:fontFamily="@font/coiny"
         android:gravity="center"
         android:text="@string/username"
