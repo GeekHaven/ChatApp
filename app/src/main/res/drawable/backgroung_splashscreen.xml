@@ -4,11 +4,10 @@
     <item>
         <color android:color="@color/white"/>
     </item>
-    <item>
-        <bitmap
-            android:src="@drawable/logo_splash_scree"
-            android:tileMode="disabled"
-            android:gravity="fill"/>
+    <item android:drawable="@drawable/logo_splash_scree"
+            android:width="200dp"
+            android:height="200dp"
+            android:gravity="center">
     </item>
 
 </layer-list>
