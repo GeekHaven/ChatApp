@@ -1,0 +1,72 @@
+{
+  "project_info": {
+    "project_number": "549815938807",
+    "firebase_url": "https://chatapp-miniopencode-iiita.firebaseio.com",
+    "project_id": "chatapp-miniopencode-iiita",
+    "storage_bucket": "chatapp-miniopencode-iiita.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:549815938807:android:cbbbb2ed2c983a9f0d2df2",
+        "android_client_info": {
+          "package_name": "com.example.chatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "549815938807-c346ksi4ij0op7mq01efc8sel3sjtnp2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.chatapp",
+            "certificate_hash": "45298c8b1f13b69ce75385ba2b8f7b9a5b68358b"
+          }
+        },
+        {
+          "client_id": "549815938807-kh2jje1976ems2kj9iaigrc7vhf6ucid.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.chatapp",
+            "certificate_hash": "efef0fffa7809d9a8e128ec82fab12afc3c5c308"
+          }
+        },
+        {
+          "client_id": "549815938807-29ehgt8e655jflc7o7ocsre6d9q02mh7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.chatapp",
+            "certificate_hash": "c021d98f03856870c437e3bf58768f8872e898e7"
+          }
+        },
+        {
+          "client_id": "549815938807-88k23id7dqu6m5o7j075d5oqt653huva.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.chatapp",
+            "certificate_hash": "8952d582a530eb15c7fa5e09fb4e99ed2956314e"
+          }
+        },
+        {
+          "client_id": "549815938807-5dsu0qtqmp0upis2lht9r6inso06ebuj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABtcWzo0BTUrkK7Wv_u0hsvsUSErBL4CQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "549815938807-5dsu0qtqmp0upis2lht9r6inso06ebuj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
