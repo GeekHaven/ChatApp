@@ -2,8 +2,12 @@ package com.example.chatapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 
 import android.text.TextUtils;
@@ -33,7 +37,6 @@ public class LoginActivity extends AppCompatActivity {
     private GoogleSignInClient mGoogleSignInClient;
     private Button GoogleSignInBtn;
     private FirebaseAuth mAuth;
-
 
     EditText email;
     EditText password;
@@ -164,10 +167,8 @@ public class LoginActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Intent intent=new Intent(getApplicationContext(),MainActivity.class);
-                            startActivity(intent);
-                            Toast.makeText(LoginActivity.this, "SigIn Successfull", Toast.LENGTH_SHORT).show();
-                            finish();
+                            FirebaseHandler.registrationCheck(mAuth.getUid(),LoginActivity.this);
+                            LocalBroadcastManager.getInstance(LoginActivity.this).registerReceiver(receiver,new IntentFilter("custom-action-local-broadcast"));
                         } else {
                             // If sign in fails, display a message to the user.
                             Toast.makeText(LoginActivity.this, "Sorry Google Authentication Failed!" +
@@ -177,8 +178,29 @@ public class LoginActivity extends AppCompatActivity {
                         // ...
                     }
                 });
+
+        // checking the RegisteredUserOrNot
+
+
     }
 
 
-
+    private BroadcastReceiver receiver = new BroadcastReceiver() {
+        Intent intent2;
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String message = "";
+                  message += intent.getStringExtra("validation");
+            Log.i(".,.,.,.<><><>< message",(message));
+            if(message.equals("true")) {
+                intent2 = new Intent(LoginActivity.this,MainActivity.class);
+                Toast.makeText(context, "User Registered", Toast.LENGTH_SHORT).show();
+                startActivity(intent2);
+            }else {
+                Toast.makeText(context, "Not Registered", Toast.LENGTH_SHORT).show();
+                intent2 = new Intent(LoginActivity.this,RegistrationActivity.class);
+                startActivity(intent2);
+            }
+        }
+    };
 }
