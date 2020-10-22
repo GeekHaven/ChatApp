@@ -12,4 +12,6 @@
     <string name="todo1">TODO</string>
     <string name="username">Username</string>
     <string name="todo123">TODO</string>
+    <string name="getStarted">Get Started</string>
+    <string name="getStartedDescription">Vibsey lets you to get in contact with your closed ones. Message contacts, start free video or voice calls, and hop on a conversation with one person or a group.</string>
 </resources>
