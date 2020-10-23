@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RegisterationActivity"></activity>
+        <activity android:name=".GetStartedActivity"
+            android:noHistory="true"/>
+        <activity android:name=".RegisterationActivity" />
         <activity
             android:name=".SplashScreen"
             android:noHistory="true"

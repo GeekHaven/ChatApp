@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GetStartedActivity">
+
+    <ImageView
+        android:id="@+id/hugo_meggage_sent_png"
+        android:layout_width="328dp"
+        android:layout_height="242dp"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/hugo_message_sent"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/get_started_app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/hugo_meggage_sent_png"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/rock_salt"
+        android:text="@string/app_name"
+        android:textAllCaps="true"
+        android:textColor="#2F7FB9"
+        android:textSize="36sp"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/get_started_text_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/get_started_app_name"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:layout_marginRight="56dp"
+        android:layout_marginLeft="56dp"
+        android:textSize="20sp"
+        android:fontFamily="@font/reemkufi_regular"
+        android:textColor="#80000000"
+        android:layout_above="@+id/get_started_btn"
+        android:layout_marginBottom="30dp"
+        android:maxLines="5"
+        android:text="@string/getStartedDescription" />
+
+    <Button
+        android:id="@+id/get_started_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/getStarted"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/reemkufi_regular"
+        android:paddingLeft="35dp"
+        android:paddingRight="35dp"
+        android:textSize="24sp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:textAllCaps="false"
+        android:background="@drawable/custom_button"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"/>
+
+</RelativeLayout>
