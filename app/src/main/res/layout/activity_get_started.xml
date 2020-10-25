@@ -4,9 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F5F5F5"
     tools:context=".GetStartedActivity">
 
     <ImageView
+        android:layout_marginTop="40dp"
         android:id="@+id/hugo_meggage_sent_png"
         android:layout_width="328dp"
         android:layout_height="242dp"
@@ -57,6 +59,7 @@
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:textAllCaps="false"
+        android:backgroundTint="#2F7FB9"
         android:background="@drawable/custom_button"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
