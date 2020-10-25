@@ -33,25 +33,13 @@ import com.google.firebase.auth.GoogleAuthProvider;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private static final int RC_SIGN_IN = 123;
-    private GoogleSignInClient mGoogleSignInClient;
-    private Button GoogleSignInBtn;
     private FirebaseAuth mAuth;
 
     EditText email;
     EditText password;
     Button emailsignin;
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        //Check if there is already a user
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser!=null){
-            Intent intent=new Intent(getApplicationContext(),MainActivity.class);
-            startActivity(intent);
-        }
-    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,24 +48,9 @@ public class LoginActivity extends AppCompatActivity {
 
         mAuth=FirebaseAuth.getInstance();
 
-        GoogleSignInBtn=findViewById(R.id.google_sign_in_btn);
         email=findViewById(R.id.editTextTextPersonName);
         password=findViewById(R.id.editTextTextPassword);
         emailsignin=findViewById(R.id.button2);
-        createRequest();
-
-        GoogleSignInBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                signIn();
-            }
-        });
-
-
-
-
-
-
 
         emailsignin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -120,87 +93,4 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-
-    private void createRequest() {
-        // Configure Google Sign In
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id))
-                .requestEmail()
-                .build();
-
-        // Build a GoogleSignInClient with the options specified by gso.
-        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-    }
-
-    private void signIn() {
-        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
-        startActivityForResult(signInIntent, RC_SIGN_IN);
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
-        if (requestCode == RC_SIGN_IN) {
-            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-            try {
-                // Google Sign In was successful, authenticate with Firebase
-                GoogleSignInAccount account = task.getResult(ApiException.class);
-                assert account != null;
-                firebaseAuthWithGoogle(account.getIdToken());
-            } catch (ApiException e) {
-                Log.d("google-auth-error",e.toString());
-                // Google Sign In failed, update UI appropriately
-                Toast.makeText(this,"SignIn Failed :)",Toast.LENGTH_SHORT).show();
-                // ...
-            }
-        }
-    }
-
-    private void firebaseAuthWithGoogle(String idToken) {
-        AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
-        mAuth.signInWithCredential(credential)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            FirebaseHandler.registrationCheck(mAuth.getUid(),LoginActivity.this);
-                            LocalBroadcastManager.getInstance(LoginActivity.this).registerReceiver(receiver,new IntentFilter("custom-action-local-broadcast"));
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Toast.makeText(LoginActivity.this, "Sorry Google Authentication Failed!" +
-                                    "\nPlease check your internet connectivity", Toast.LENGTH_LONG).show();
-                        }
-
-                        // ...
-                    }
-                });
-
-        // checking the RegisteredUserOrNot
-
-
-    }
-
-
-    private BroadcastReceiver receiver = new BroadcastReceiver() {
-        Intent intent2;
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            String message = "";
-                  message += intent.getStringExtra("validation");
-            Log.i(".,.,.,.<><><>< message",(message));
-            if(message.equals("true")) {
-                intent2 = new Intent(LoginActivity.this,MainActivity.class);
-                Toast.makeText(context, "User Registered", Toast.LENGTH_SHORT).show();
-                startActivity(intent2);
-            }else {
-                Toast.makeText(context, "Not Registered", Toast.LENGTH_SHORT).show();
-                intent2 = new Intent(LoginActivity.this,RegistrationActivity.class);
-                startActivity(intent2);
-            }
-        }
-    };
 }
