@@ -11,8 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".GetStartedActivity"
-            android:noHistory="true"/>
+        <activity android:name=".WelcomeScreen"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".GetStartedActivity"
+            android:noHistory="true" />
         <activity android:name=".RegisterationActivity" />
         <activity
             android:name=".SplashScreen"

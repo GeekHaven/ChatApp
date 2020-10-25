@@ -23,7 +23,7 @@ public class GetStartedActivity extends AppCompatActivity {
         getStatedBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+                startActivity(new Intent(getApplicationContext(),WelcomeScreen.class));
             }
         });
 

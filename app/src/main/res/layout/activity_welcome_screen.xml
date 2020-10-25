@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    tools:context=".WelcomeScreen">
+
+    <ImageView
+        android:layout_marginTop="40dp"
+        android:id="@+id/hugo_chat_bot_png"
+        android:layout_width="328dp"
+        android:layout_height="242dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/hugo_chatbot"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@+id/hugo_chat_bot_png"
+        android:layout_centerHorizontal="true"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome !"
+            android:fontFamily="@font/rock_salt"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="All your personal comuunication is in one place and easily accessible."
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:lineHeight="26sp"
+            android:textSize="18sp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/reemkufi_regular"/>
+
+        <Button
+            android:id="@+id/sign_in_with_google"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textAllCaps="false"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:textColor="#000000"
+            android:text="Continue with Google"
+            android:drawablePadding="30dp"
+            android:fontFamily="@font/reemkufi_regular"
+            android:textSize="20sp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/custom_button"
+            android:drawableLeft="@drawable/google_logo">
+        </Button>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Or"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:drawablePadding="32dp"
+            android:id="@+id/sign_in_with_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textAllCaps="false"
+            android:text="Continue with Email"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:drawableLeft="@drawable/mail_logo"
+            android:textColor="#000000"
+            android:fontFamily="@font/reemkufi_regular"
+            android:textSize="20sp"
+            android:background="@drawable/custom_button"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
