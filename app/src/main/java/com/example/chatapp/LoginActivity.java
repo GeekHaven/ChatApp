@@ -82,6 +82,7 @@ public class LoginActivity extends AppCompatActivity {
                                     Toast.makeText(LoginActivity.this,"User Signed In",Toast.LENGTH_SHORT).show();
                                 }
                                 else {
+                                    Log.d("email_auth_failed", String.valueOf(task.getException()));
                                     Toast.makeText(LoginActivity.this, "Authentication failed",
                                             Toast.LENGTH_SHORT).show();
                                 }

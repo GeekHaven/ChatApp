@@ -16,7 +16,7 @@
         <activity
             android:name=".GetStartedActivity"
             android:noHistory="true" />
-        <activity android:name=".RegisterationActivity" />
+        <activity android:name=".RegistrationActivity" />
         <activity
             android:name=".SplashScreen"
             android:noHistory="true"

@@ -13,6 +13,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="60dp"
+        android:layout_marginTop="30dp"
         android:layout_height="60dp"
         android:layout_gravity="center"
         app:cardCornerRadius="@android:dimen/app_icon_size">
